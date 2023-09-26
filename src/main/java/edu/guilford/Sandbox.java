@@ -13,7 +13,7 @@ public class Sandbox {
     System.out.println("Hello " + Value3);
     if (Value1 > Value2) {
         System.out.println("Value 1 is greator");
-    } else if (Value2 > Value1) {
+    } else {
         System.out.println("Value 2 is greator");
     }
         
