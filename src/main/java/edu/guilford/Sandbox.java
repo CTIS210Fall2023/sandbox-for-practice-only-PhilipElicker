@@ -1,5 +1,6 @@
 package edu.guilford;
 
+import java.util.Scanner;
 import java.util.Timer;
 
 import javax.swing.plaf.synth.SynthStyle;
@@ -21,5 +22,17 @@ public class Sandbox {
             " , value = $" + String.format("%.2f",currentValue));
             year = year + 1;
         }
-    }
+
+        //Sentinel Loop
+        int sentinel = 0;
+        int total = 0;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter an integer (0 to stop):\t");
+        int value = scan.nextInt();
+        while (value != sentinel) {
+            total = total + value;
+            value = scan.nextInt();
+        }
+        System.out.println("The total is " + total);
+}
 }
