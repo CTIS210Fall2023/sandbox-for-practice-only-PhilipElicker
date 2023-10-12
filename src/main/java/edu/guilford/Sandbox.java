@@ -6,16 +6,20 @@ import javax.swing.plaf.synth.SynthStyle;
 
 public class Sandbox {
     public static void main(String[] args) {
-    int Value1 = 140;
-    int Value2 = 200;
-    
-    double Value3 = Value1 + Value2;
-    System.out.println("Hello " + Value3);
-    if (Value1 > Value2) {
-        System.out.println("Value 1 is greator");
-    } else {
-        System.out.println("Value 2 is greator");
-    }
-        
+        //Counting Loop
+        double initialDeposit = 1000;
+        double interestRate = 0.03;
+        double year1Deposit = 100;
+        double currentValue = initialDeposit;
+        //Starting Year
+        int year = 0;
+        int finalYear = 20;
+
+        while (year < finalYear) {
+            currentValue = currentValue * (1+interestRate) + year1Deposit;
+            System.out.println("At the end of year " + year + 
+            " , value = $" + String.format("%.2f",currentValue));
+            year = year + 1;
+        }
     }
 }
