@@ -7,32 +7,22 @@ import javax.swing.plaf.synth.SynthStyle;
 
 public class Sandbox {
     public static void main(String[] args) {
-        //Counting Loop
-        double initialDeposit = 1000;
-        double interestRate = 0.03;
-        double year1Deposit = 100;
-        double currentValue = initialDeposit;
-        //Starting Year
-        int year = 0;
-        int finalYear = 20;
-
-        while (year < finalYear) {
-            currentValue = currentValue * (1+interestRate) + year1Deposit;
-            System.out.println("At the end of year " + year + 
-            " , value = $" + String.format("%.2f",currentValue));
-            year = year + 1;
-        }
-
-        //Sentinel Loop
-        int sentinel = 0;
-        int total = 0;
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter an integer (0 to stop):\t");
-        int value = scan.nextInt();
-        while (value != sentinel) {
-            total = total + value;
-            value = scan.nextInt();
-        }
-        System.out.println("The total is " + total);
+    // Recursion
+    int n = 10;
+    // Ask for 10!
+    System.out.println("The value of " + n + "! is " + factorial(n));
 }
+
+public static int factorial(int nextN) {
+    // Recursive method for calculating the factorial of nextN
+    // Base Case
+    if (nextN == 0) {
+        return 1;
+    } else {
+        // Calculate factorial of smaller value
+        int smallerFact = nextN * factorial(nextN - 1);
+        return smallerFact;
+    }
+}
+
 }
